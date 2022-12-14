@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Button from '@mui/material/Button';
+import DehazeIcon from '@mui/icons-material/Dehaze';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -10,6 +11,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import {IconButton} from "@mui/material";
+import {Dehaze} from "@mui/icons-material";
 
 function ServerListDrawer({servers}) {
     const [state, setState] = React.useState(false);
@@ -34,6 +37,12 @@ function ServerListDrawer({servers}) {
             onKeyDown={toggleDrawer(false)}
         >
             <List>
+                <ListItem>
+                    <ListItemIcon>
+                        <Dehaze />
+                    </ListItemIcon>
+                    <ListItemText primary="OURPLAYGROUND" />
+                </ListItem>
                 {servers.map((text, index) => (
                     <ListItem key={text} disablePadding>
                         <ListItemButton>
@@ -64,7 +73,7 @@ function ServerListDrawer({servers}) {
     return (
         <div>
             <React.Fragment>
-                <Button onClick={toggleDrawer(true)}>Servers</Button>
+                <IconButton onClick={toggleDrawer(true)}><Dehaze /></IconButton>
                 <SwipeableDrawer
                     anchor='left'
                     open={state}
