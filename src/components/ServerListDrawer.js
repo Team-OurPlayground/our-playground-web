@@ -1,8 +1,6 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import Button from '@mui/material/Button';
-import DehazeIcon from '@mui/icons-material/Dehaze';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
@@ -37,15 +35,17 @@ function ServerListDrawer({servers}) {
             onKeyDown={toggleDrawer(false)}
         >
             <List>
-                <ListItem>
+                <ListItem sx={{pl: '0.5rem', pr: '1rem'}} disablePadding>
+                    <ListItem>
                     <ListItemIcon>
                         <Dehaze />
                     </ListItemIcon>
                     <ListItemText primary="OURPLAYGROUND" />
+                    </ListItem>
                 </ListItem>
                 {servers.map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
+                    <ListItem key={text} sx={{pl: '0.5rem', pr: '1rem'}} disablePadding>
+                        <ListItemButton sx={{borderRadius: '10px'}}>
                             <ListItemIcon>
                                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                             </ListItemIcon>
