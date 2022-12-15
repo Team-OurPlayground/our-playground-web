@@ -36,12 +36,12 @@ function ServerListDrawer({servers}) {
         >
             <List>
                 <ListItem sx={{pl: '0.5rem', pr: '1rem'}} disablePadding>
-                    <ListItem>
+                    <ListItemButton>
                     <ListItemIcon>
                         <Dehaze />
                     </ListItemIcon>
                     <ListItemText primary="OURPLAYGROUND" />
-                    </ListItem>
+                    </ListItemButton>
                 </ListItem>
                 {servers.map((text, index) => (
                     <ListItem key={text} sx={{pl: '0.5rem', pr: '1rem'}} disablePadding>
