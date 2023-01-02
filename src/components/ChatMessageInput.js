@@ -5,7 +5,7 @@ import SockJS from 'sockjs-client';
 import {Stomp} from "@stomp/stompjs";
 import {useEffect, useState} from "react";
 
-const sock = new SockJS('http://localhost:8080/ws-stomp')
+const sock = new SockJS('http://13.124.161.235:8080/ws-stomp')
 const ws = Stomp.over(sock);
 function ChatMessageInput({username}) {
     const [message, setMessage] = useState("");
